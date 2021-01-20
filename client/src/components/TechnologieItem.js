@@ -7,7 +7,11 @@ const TechnologieItem = ({ techno }) => {
     <div className='card m-3' style={{ maxWidth: '100%' }}>
       <div className='row g-0'>
         <div className=' d-flex col-md-4 justify-content-center align-items-center'>
-          <img src={techno.image} alt={techno.name} />
+          <img
+            className='img-fluid'
+            src={`images/${techno.image ? techno.image : 'tech.png'}`}
+            alt={techno.name}
+          />
         </div>
         <div className='col-md-8'>
           <div className='card-body'>
