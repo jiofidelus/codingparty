@@ -1,15 +1,17 @@
 /** @format */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
+  const activeStyle = { color: '#F15B2A' };
+
   return (
     <nav class='navbar navbar-expand-lg navba-dark bg-light'>
       <div class='container-fluid'>
-        <Link className='nav-brand' to='/'>
+        <NavLink exact activeStyle={activeStyle} className='nav-link' to='/'>
           Acceuil
-        </Link>
+        </NavLink>
         <button
           class='navbar-toggler'
           type='button'
@@ -24,14 +26,22 @@ const NavBar = () => {
         <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
           <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
             <li class='nav-item'>
-              <Link className='nav-link' to='/technologies'>
+              <NavLink
+                className='nav-link'
+                activeStyle={activeStyle}
+                to='/technologies'
+              >
                 Technologies
-              </Link>
+              </NavLink>
             </li>
             <li class='nav-item'>
-              <Link to='suggestions' className='nav-link'>
+              <NavLink
+                to='suggestions'
+                className='nav-link'
+                activeStyle={activeStyle}
+              >
                 Suggestions
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <form class='d-flex'>
