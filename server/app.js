@@ -5,8 +5,11 @@ const app = express();
 const logger = require('morgan');
 const cookiePaser = require('cookie-parser');
 const apiRouter = require('./routes/api');
+const cors = require('cors');
 
 const port = 3003;
+
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());

@@ -4,7 +4,9 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
-const Suggestions = () => {
+const Suggestions = (props) => {
+  const { history } = props;
+
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [date, setDate] = useState(null);
@@ -29,6 +31,7 @@ const Suggestions = () => {
       .then(() => {
         toast.success('Suggestion ajoute');
         clearInput();
+        history.push('technologies');
       })
       .catch((error) => {
         toast.error('Erreur verifie les champs');

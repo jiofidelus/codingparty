@@ -15,10 +15,11 @@ psql.connect();
 
 router.get('/technologies', async (req, res) => {
   const result = await psql.query({
-    text: 'SELECT * from technologies',
+    text: 'SELECT * from technologies order by id DESC ',
   });
-  console.log(result);
-  res.json(result.rows);
+  setTimeout(() => {
+    res.json(result.rows);
+  }, 5000);
 });
 
 router.post('/technologies', async (req, res) => {
