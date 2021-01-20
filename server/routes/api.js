@@ -19,7 +19,7 @@ router.get('/technologies', async (req, res) => {
   });
   setTimeout(() => {
     res.json(result.rows);
-  }, 5000);
+  }, 3000);
 });
 
 router.post('/technologies', async (req, res) => {

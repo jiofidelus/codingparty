@@ -1,12 +1,32 @@
 /** @format */
 
 import axios from 'axios';
+import pickBy from 'lodash.pickby';
 import React, { useEffect, useState } from 'react';
-import TechnologieItem from './TechnologieItem';
+import TechnologiesList from './TechnologiesList';
 
 export default function Technologies() {
   const [technologies, setTechnologies] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (value) => {
+    setSearchTerm(value.target.value);
+  };
+
+  const filterItems = (items) => {
+    let technologies = items;
+
+    if (searchTerm) {
+      technologies = pickBy(technologies, (value, key) => {
+        return (
+          value.name.match(searchTerm) || value.description.match(searchTerm)
+        );
+      });
+    }
+    return technologies;
+  };
 
   useEffect(() => {
     const fetchTechs = async () => {
@@ -24,16 +44,34 @@ export default function Technologies() {
 
   return (
     <div className='container '>
-      {console.log(loading)}
+      {!loading && (
+        <div className='container'>
+          <div className='row m-5'>
+            <input
+              required
+              name='searchTech'
+              value={searchTerm}
+              type='search'
+              class='form-control'
+              id='input
+              requiredmail'
+              onChange={handleSearch}
+              placeholder='Recherchez un Stack'
+            />
+          </div>
+        </div>
+      )}
       {loading && (
-        <div class='spinner-border' role='status'>
-          <span class='visually-hidden'>Loading...</span>
+        <div className='d-flex justify-content-center'>
+          <div class='spinner-grow' role='status'>
+            <span class='visually-hidden'>Loading...</span>
+          </div>
         </div>
       )}
 
-      {technologies.map((techno, index) => {
-        return <TechnologieItem techno={techno} />;
-      })}
+      <div>
+        <TechnologiesList technos={filterItems(technologies)} />
+      </div>
     </div>
   );
 }

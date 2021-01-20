@@ -44,14 +44,6 @@ const NavBar = () => {
               </NavLink>
             </li>
           </ul>
-          <form class='d-flex'>
-            <input
-              class='form-control me-2'
-              type='search'
-              placeholder='Faites une recherche'
-              aria-label='Search'
-            />
-          </form>
         </div>
       </div>
     </nav>

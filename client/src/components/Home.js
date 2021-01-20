@@ -7,10 +7,11 @@ const Home = () => {
     <div className='container p-3'>
       <h1>Acceuil</h1>
       <p>
-        Code Camp is a community event where developers learn from fellow
-        developers. We also have developer related topics that include software
-        branding, legal issues around software as well as other topics
-        developers are interested in hearing about.
+        Code Camp est un événement communautaire où les développeurs apprennent
+        des autres développeurs. Nous avons également des sujets liés aux
+        développeurs qui incluent la marque de logiciels, les problèmes
+        juridiques liés aux logiciels ainsi que d'autres sujets que les
+        développeurs sont intéressés à entendre.
       </p>
     </div>
   );
