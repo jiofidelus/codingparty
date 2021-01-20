@@ -1,42 +1,83 @@
 /** @format */
 
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
-function Suggestions() {
+const Suggestions = () => {
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [date, setDate] = useState(null);
+  const [speaker, setSpeaker] = useState('');
+
+  const clearInput = () => {
+    setName('');
+    setDescription('');
+    setDate();
+    setSpeaker('');
+  };
+
+  const onSave = async (event) => {
+    event.preventDefault();
+    await axios
+      .post('http://localhost:3003/api/technologies', {
+        name,
+        description,
+        date,
+        speaker,
+      })
+      .then(() => {
+        toast.success('Suggestion ajoute');
+        clearInput();
+      })
+      .catch((error) => {
+        toast.error('Erreur verifie les champs');
+      });
+  };
+
   return (
     <div className='container'>
       <h2>Proposer une technologie</h2>
-      <form>
+      <form onSubmit={onSave}>
         <div class='mb-3'>
-          <label for='exampleInputEmail1' class='form-label'>
+          <label for='inputmail' class='form-label'>
             Nom de la technologie
           </label>
           <input
-            type='email'
+            required
+            value={name}
+            type='text'
             class='form-control'
-            id='exampleInputEmail1'
-            aria-describedby='emailHelp'
+            id='input
+              requiredmail'
+            onChange={(value) => setName(value.target.value)}
           />
         </div>
         <div class='mb-3'>
-          <label for='exampleInputEmail1' class='form-label'>
+          <label for='textareadescription' class='form-label'>
             Description
           </label>
           <textarea
+            required
+            value={description}
+            onChange={(description) => setDescription(description.target.value)}
             class='form-control'
-            id='exampleInputEmail1'
+            id='textareadescription'
             aria-describedby='emailHelp'
           />
         </div>
         <div class='mb-3'>
-          <label for='exampleInputEmail1' class='form-label'>
+          <label for='inputDate' class='form-label'>
             Date
           </label>
           <input
+            required
             type='date'
+            value={date}
             class='form-control'
-            id='exampleInputEmail1'
+            id='inputDate'
             aria-describedby='emailHelp'
+            onChange={(date) => setDate(date.target.value)}
           />
         </div>
         <div class='mb-3'>
@@ -44,13 +85,17 @@ function Suggestions() {
             Presentateur
           </label>
           <select
+            required
             class='form-select form-select-lg mb-3'
             aria-label='.form-select-lg example'
+            defaultValue={1}
+            value={speaker}
+            onChange={(data) => setSpeaker(data.target.value)}
           >
             <option selected>Veuillez choisir un speaker</option>
-            <option value='1'>REGIS ATEMENGUE</option>
-            <option value='2'>PALMA PALMA</option>
-            <option value='3'>ABOUAM PROPSER</option>
+            <option value='REGIS ATEMENGUE'>REGIS ATEMENGUE</option>
+            <option value='PALMA PALMA'>PALMA PALMA</option>
+            <option value='PROSPER'>ABOUAM PROPSER</option>
           </select>
         </div>
 
@@ -60,6 +105,6 @@ function Suggestions() {
       </form>
     </div>
   );
-}
+};
 
 export default Suggestions;

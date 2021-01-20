@@ -1,6 +1,8 @@
 /** @format */
 
 import { Route, Switch } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -18,6 +20,7 @@ function App() {
         <Route path='/suggestions' component={Suggestions} />
         <Route path='/' component={Home} />
       </Switch>
+      <ToastContainer />
     </>
   );
 }
