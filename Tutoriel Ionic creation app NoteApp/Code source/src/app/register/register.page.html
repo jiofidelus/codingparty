@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Inscription</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center ion-padding-vertical ion-margin-vertical">
+    <p class="ion-margin-horizontal">
+      S'inscrire avec une adresse email dans NoteApp pour vous connecter dans l'application
+    </p>
+  </div>
+  <form #form="ngForm" (ngSubmit)="inscription(form)">
+    <ion-list class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Email </ion-label>
+        <ion-input name="email" ngModel required inputmode="email" autocomplete="true" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Mot de passe</ion-label>
+        <ion-input name="password" ngModel required inputmode="password" type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="ion-margin ion-text-center">
+      <ion-text class="ion-padding-horizontal" color="primary" [style.fontSize]="'13px'"><span class="ion-margin-vertical">En appuyant sur s'inscrire, vous acceptez nos <a href="#">conditions générales d'utilisation </a> et la <a href="#">politique de protection des données personnelles</a></span></ion-text>
+    </div>
+    <div class="ion-padding ion-margin-top">
+      <ion-button mode="ios" expand="block" shape="round" type="submit" [disabled]="form.invalid" class="ion-no-margin">S'inscrire</ion-button>
+    </div>
+    <div class="ion-padding ion-text-center">
+      <ion-text [style.fontWeight]="'500'" color="primary" routerLink="../login" routerDirection="back" [style.fontSize]="'13px'"><span class="ion-margin-vertical">J'ai déja un compte NoteApp</span></ion-text>
+    </div>
+  </form>
+</ion-content>

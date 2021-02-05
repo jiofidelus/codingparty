@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Nouvelle note
+    </ion-title>
+    <ion-buttons slot="end">
+        <ion-button (click)="save()" [disabled]="!note">
+          <ion-icon type="submit" slot="icon-only" name="save"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center ion-margin-vertical">
+    <ion-text class="ion-margin-vertical" color="dark"> {{ date.toDateString() }} </ion-text>
+  </div>
+  <ion-textarea class="ion-padding-horizontal" [(ngModel)]="note" name="note" required rows="30"></ion-textarea>
+</ion-content>

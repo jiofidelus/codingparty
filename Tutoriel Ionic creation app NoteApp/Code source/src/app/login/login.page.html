@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center ion-padding-vertical ion-margin-vertical">
+    <ion-avatar class="middle-img" slot="center" style="display: inline">
+      <img srcset='../assets/img/logo.png'>
+    </ion-avatar>
+    <p class="ion-margin-horizontal">
+      Veuillez entrer vos informations de connexion à votre compte NoteApp pour pouvoir acceder à toutes vos notes
+    </p>
+  </div>
+  <form #form="ngForm" (ngSubmit)="connexion(form)">
+    <ion-list class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Email </ion-label>
+        <ion-input name="email" ngModel required inputmode="email" autocomplete="true" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Mot de passe</ion-label>
+        <ion-input name="password" ngModel required inputmode="password" type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="ion-padding ion-margin-top">
+      <ion-button mode="ios" expand="block" shape="round" type="submit" [disabled]="form.invalid" class="ion-no-margin">Se connecter</ion-button>
+    </div>
+    <div class="ion-padding ion-text-center">
+      <ion-text [style.fontWeight]="'500'" color="primary" routerLink="../register" routerDirection="forward" [style.fontSize]="'13px'"><span class="ion-margin-vertical">Je n'ai pas encore de compte NoteApp</span></ion-text>
+    </div>
+  </form>
+</ion-content>

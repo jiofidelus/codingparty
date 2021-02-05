@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Note {{index + 1}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="note">
+  <div class="ion-text-center ion-margin-vertical">
+    <ion-text class="ion-margin-vertical" color="dark"> {{ note.date }} </ion-text>
+  </div>
+  <ion-textarea readonly="true" class="ion-padding-horizontal" [(ngModel)]="note.note" name="note" required rows="30"></ion-textarea>
+</ion-content>
