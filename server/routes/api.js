@@ -5,10 +5,10 @@ const router = express.Router();
 const { Client } = require('pg');
 
 const psql = new Client({
-  user: 'atemengue',
-  host: 'localhost',
-  password: 'regis1234',
-  database: 'tech',
+  user: '',
+  host: '',
+  password: '',
+  database: '',
 });
 
 psql.connect();
@@ -36,6 +36,10 @@ router.post('/technologies', async (req, res) => {
   const id = result.rows[0].id;
 
   res.json({ id, name, description, date, speaker });
+});
+
+router.delete('/technologies', async (req, res) => {
+  const { id } = req.body;
 });
 
 module.exports = router;

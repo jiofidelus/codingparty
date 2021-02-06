@@ -32,7 +32,7 @@ export default function Technologies() {
     const fetchTechs = async () => {
       setLoading(true);
       await axios
-        .get('http://localhost:3003/api/technologies')
+        .get('http://localhost:9393/api/technologies')
         .then((results) => {
           setTechnologies(results.data);
           setLoading(false);

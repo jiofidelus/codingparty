@@ -15,12 +15,14 @@ function App() {
     <>
       <Header />
       <NavBar />
-      <Switch>
-        <Route path='/technologies' component={Technologies} />
-        <Route path='/suggestions' component={Suggestions} />
-        <Route path='/' component={Home} />
-      </Switch>
-      <ToastContainer />
+      <div>
+        <Switch>
+          <Route path='/technologies' component={Technologies} />
+          <Route path='/suggestions' component={Suggestions} />
+          <Route path='/' component={Home} />
+        </Switch>
+        <ToastContainer />
+      </div>
     </>
   );
 }

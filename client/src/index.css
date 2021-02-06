@@ -23,3 +23,25 @@ code {
 .active {
   color: red;
 }
+
+.heartredbutton {
+  background-image: url('images/heart-red.png');
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  float: right;
+}
+
+.heartdarkbutton {
+  background-image: url('images/heart-dark.png');
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  float: right;
+}
