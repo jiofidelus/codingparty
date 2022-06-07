@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
 	<daoConfig type="OntGDB">
-		<user>test</user>
-		<passWord>test</passWord>
+		<user>famecse</user>
+		<passWord>famecse</passWord>
 		<host>http://localhost:7200</host>
-		<dbrepository>test</dbrepository>
+		<dbrepository>famecse</dbrepository>
 		<dbname>no</dbname>
-		<dbprefix>test</dbprefix>
-		<dbcontext>http://localhost/ontologies/test#</dbcontext>
+		<dbprefix>famecse</dbprefix>
+		<dbcontext>http://localhost/ontologies/famecse#</dbcontext>
 	</daoConfig>
 	
-	<daoConfig type="NEO4JDB">
-		<user>neo4j</user>
-		<passWord>test</passWord>
-		<host>bolt://localhost:7687</host>
-        <dbname>neo4j</dbname>
-	</daoConfig>
 </config>

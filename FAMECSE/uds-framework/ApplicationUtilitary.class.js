@@ -7,7 +7,7 @@ const ApplicationUtilitary = module.exports = {
 	loadAppConfig: function () {
 		if (this._$appFileConfig == null) {
 			var domParserImpl = new xmldom.DOMParserImpl();
-			var xslString = fs.readFileSync(__dirname + "\\..\\..\\AppliLib\\appConfig.xml").toString();
+			var xslString = fs.readFileSync(__dirname + "/../../AppliLib/appConfig.xml").toString();
 			var dxml = domParserImpl.parseFromString(xslString);
 
 			this._$appFileConfig = dxml;

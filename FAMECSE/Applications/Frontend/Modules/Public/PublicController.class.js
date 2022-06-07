@@ -1,8 +1,8 @@
 const BackController = require('uds-framework/BackController.class');
 const HTTPRequest = require('uds-framework/HTTPRequest.class');
-const Person = require('../../../../AppliLib/Entities/Person.class');
+//const Person = require('../../../../AppliLib/Entities/Person.class');
 const Aliment = require('../../../../AppliLib/Entities/Aliment.class');
-const Conduit = require('../../../../AppliLib/Entities/Conduit.class');
+//const Conduit = require('../../../../AppliLib/Entities/Conduit.class');
 /**
  * @class PublicController
  */

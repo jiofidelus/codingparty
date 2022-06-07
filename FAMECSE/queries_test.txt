@@ -1,0 +1,12 @@
+PREFIX entity: <http://example/framework/entity/>
+PREFIX instance: <http://example/framework/entity/instance/>
+PREFIX atrib: <http://example/framework/entity/atributs/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+select ?id ?a ?v
+where { 
+	?id rdfs:domain entity:Aliment.
+    ?id ?a ?v.
+    FILTER(STRSTARTS(STR(?a), "http://example/framework/entity/atributs/")).
+} limit 100 
