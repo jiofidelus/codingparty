@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+	<route url="/insert/" module="Public" action="insertPlat" />
+	<route url="/aliments/" module="Public" action="ListInsert" />
+ 
+</routes>
